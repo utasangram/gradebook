@@ -4,14 +4,20 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-public class Student {
+public class Student extends User{
 	@Id
-	private String id;
-	private String name;
-	private String username;
-	private String password;
-	private int grade;
-	public String getId() {
+/*	private String id; //inherited
+	private String name; //inherited
+	private String username; //inherited
+	private String password; //inherited
+*/	private int grade;
+	
+	Student(String id, String name, String username, String password, int grade) {
+		super(id, name, username, password);
+		this.grade = grade;
+	}
+	
+/*	public String getId() {
 		return id;
 	}
 	public void setId(String id) {
@@ -34,7 +40,7 @@ public class Student {
 	}
 	public void setPassword(String password) {
 		this.password = password;
-	}
+	}*/
 	public int getGrade() {
 		return grade;
 	}
@@ -43,7 +49,8 @@ public class Student {
 	}
 	@Override
 	public String toString() {
-		return "Student [id=" + id + ", name=" + name + ", username=" + username + ", password=" + password + ", grade="
+		return "Student [id=" + super.getId() + ", name=" + super.getName() + ", username=" 
+				+ super.getUsername() + ", password=" + super.getPassword() + ", grade="
 				+ grade + "]";
 	}
 }
