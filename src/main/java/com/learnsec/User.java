@@ -1,8 +1,5 @@
 package com.learnsec;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-
 public class User {
 
 	private String id;

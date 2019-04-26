@@ -1,8 +1,43 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+ <%@ page import = "java.io.*,java.util.*" %>
+    
+<%
+   // Get session creation time.
+   Date createTime = new Date(session.getCreationTime());
+   
+   // Get last access time of this Webpage.
+   Date lastAccessTime = new Date(session.getLastAccessedTime());
+
+   String title = "Welcome Back";
+   Integer visitCount = new Integer(0);
+   String visitCountKey = new String("visitCount");
+   String userIDKey = new String("userID");
+   String userID = new String("javier");
+
+   // Check if this is new comer on your Webpage.
+   if (session.isNew() ){
+      title = "Welcome";
+      session.setAttribute(userIDKey, userID);
+      session.setAttribute(visitCountKey,  visitCount);
+   } 
+   visitCount = (Integer)session.getAttribute(visitCountKey);
+   visitCount = visitCount + 1;
+   userID = (String)session.getAttribute(userIDKey);
+   session.setAttribute(visitCountKey,  visitCount);
+%>
+
+<html>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <div class="form-style-5">
+	<head>
+      <title>Gradebook LogIn</title>
+   </head>
+   
+   <body>
+      <center>
+         <h1><% out.print(title); %></h1>
+      </center>
     <div class="form-style-6">
     	<h1>GradeBook</h1>
     </div>
@@ -14,7 +49,7 @@
 		<input type="submit" value="Log In" />
 	</form>
 </div>
-
+</body>
 
 <style type="text/css">
 .form-style-5{
@@ -129,3 +164,5 @@
 	margin: -16px -16px 16px -16px;
 }
 </style>
+
+</html>

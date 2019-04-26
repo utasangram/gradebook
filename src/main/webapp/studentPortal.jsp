@@ -1,32 +1,35 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    
+<html>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <div class="form-style-5">
     <div class="form-style-6">
     <h1>Student Portal</h1>
-    </div>
+</div>
+
 <form method="POST">
-<fieldset>
-<label for="Year">Year:</label>
-<select id="Year" name="field1">
-<optgroup label="">
-  <option value="2018">2018</option>
-  <option value="2019">2019</option>
-  <option value="2020">2020</option>
-</optgroup>
-</select>
-<label for="Semester">Semester:</label>
-<select id="Semester" name="field1">
-<optgroup label="">
-  <option value="Spring">Spring</option>
-  <option value="Fall">Fall</option>
-  <option value="Summer">Summer</option>
-</optgroup>
-</select>
-</fieldset>
-<input type="submit" value="View Grades" />
-<input type="submit" value="Logout" />
+	<fieldset>
+		<label for="Year">Year:</label>
+		<select id="Year" name="field1">
+			<optgroup label="">
+			  <option value="2018">2018</option>
+			  <option value="2019">2019</option>
+			  <option value="2020">2020</option>
+			</optgroup>
+		</select>
+		<label for="Semester">Semester:</label>
+		<select id="Semester" name="field1">
+			<optgroup label="">
+			  <option value="Spring">Spring</option>
+			  <option value="Fall">Fall</option>
+			  <option value="Summer">Summer</option>
+			</optgroup>
+		</select>
+	</fieldset>
+	<input type="submit" name=grades value="View Grades" />
+	<input type="submit" name=logout value="Logout" />
 </form>
 </div>
 
@@ -143,3 +146,5 @@
 	margin: -16px -16px 16px -16px;
 }
 </style>
+
+</html>
